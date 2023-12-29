@@ -9,8 +9,16 @@ public class TicTacToe {
     public TicTacToe() {
     }
 
+    /**
+     *
+     */
     void start() {
-        Scanner scanner = new Scanner(System.in);
+        Scanner scanner = null;
+        try{
+            scanner = new Scanner(System.in);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
         System.out.println("Welcome to Tic Tac Toe!");
         System.out.println("\nPlayer 1: Please choose your marker (x or o)");
@@ -32,7 +40,7 @@ public class TicTacToe {
         }
         System.out.println("Thank you. That leaves Player 2 with " + player2.getMarker());
         System.out.println("______\n");
-        scanner.close();
+        //scanner.close();
 
         board = new Board();
     }
