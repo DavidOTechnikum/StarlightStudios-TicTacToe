@@ -1,17 +1,44 @@
+import java.util.Scanner;
+
 public class TicTacToe {
     Player player1;
     Player player2;
     Player currentPlayer;
     Board board;
 
-    public TicTacToe() {}
+    public TicTacToe() {
+    }
 
     void start() {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Welcome to Tic Tac Toe!");
+        System.out.println("\nPlayer 1: Please choose your marker (x or o)");
+        boolean scanOk = false;
+
+        while (scanOk == false) {
+            char c = scanner.next().charAt(0);
+            if (c == 'o') {
+                player1 = new Player('o');
+                player2 = new Player('x');
+                scanOk = true;
+            } else if (c == 'x') {
+                player1 = new Player('x');
+                player2 = new Player('o');
+                scanOk = true;
+            } else {
+                System.out.println("Invalid input, please try again");
+            }
+        }
+        System.out.println("Thank you. That leaves Player 2 with " + player2.getMarker());
+        System.out.println("______\n");
+        scanner.close();
+
         board = new Board();
     }
 
     void switchCurrentPlayer() {
-        if(currentPlayer == player1) {
+        if (currentPlayer == player1) {
             currentPlayer = player2;
         } else if (currentPlayer == player2) {
             currentPlayer = player1;
