@@ -4,6 +4,20 @@ public class TicTacToe {
     Player currentPlayer;
     Board board;
 
+    public TicTacToe() {}
+
+    void start() {
+        board = new Board();
+    }
+
+    void switchCurrentPlayer() {
+        if(currentPlayer == player1) {
+            currentPlayer = player2;
+        } else if (currentPlayer == player2) {
+            currentPlayer = player1;
+        }
+    }
+
     boolean hasWinner() {
         int count = 0;
         for (int i = 0; i < Board.MAX; i++) {
@@ -45,11 +59,4 @@ public class TicTacToe {
         }
     }
 
-    void switchCurrentPlayer() {
-
-    }
-
-    void start() {
-
-    }
 }
