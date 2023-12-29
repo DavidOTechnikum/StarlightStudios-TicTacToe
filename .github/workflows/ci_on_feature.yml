@@ -10,9 +10,9 @@ name: Java CI with Maven on feature branches
 
 on:
   push:
-    branches: [ "feature*" ]
+    branches: [ "feature/*" ]
   pull_request:
-    branches: [ "feature*" ]
+    branches: [ "feature/*" ]
 
 jobs:
   build:
@@ -36,5 +36,5 @@ jobs:
         # Artifact name
         name: artifact
         # A file, directory or wildcard pattern that describes what to upload
-        path: TicTacToe/target/*.jar
+        path: TicTacToe/target/StarlightStudios-TicTacToe-1.0-SNAPSHOT.jar
       
