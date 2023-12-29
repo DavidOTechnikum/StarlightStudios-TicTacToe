@@ -8,7 +8,7 @@ public class TicTacToe {
         int count = 0;
         for (int i = 0; i < Board.MAX; i++) {
             if (board.cells[i][0] == ' ') {
-                continue; 
+                continue;
             }
             if (board.cells[i][0] == board.cells[i][1]) {
                 count++;
