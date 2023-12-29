@@ -19,7 +19,7 @@ public class Board {
         for (int i = 0; i < MAX; i++) {
             System.out.print(i + " |");
             for (int j = 0; j < MAX; j++) {
-                    System.out.print(cells[i][j]);
+                System.out.print(cells[i][j]);
 
                 if (j < MAX) {
                     System.out.print("|");

@@ -6,13 +6,10 @@ public class TicTacToe {
 
     boolean hasWinner() {
         int count = 0;
-
         for (int i = 0; i < Board.MAX; i++) {
             if (board.cells[i][0] == ' ') {
                 continue;
             }
-
-
             if (board.cells[i][0] == board.cells[i][1]) {
                 count++;
             }
@@ -24,7 +21,6 @@ public class TicTacToe {
             }
             count = 0;
         }
-
         for (int j = 0; j < Board.MAX; j++) {
             if (board.cells[0][j] == ' ') {
                 continue;
@@ -40,8 +36,6 @@ public class TicTacToe {
             }
             count = 0;
         }
-
-
         if (board.cells[0][0] != ' ' && board.cells[0][0] == board.cells[1][1] && board.cells[0][0] == board.cells[2][2]) {
             return true;
         } else if (board.cells[0][2] != ' ' && board.cells[0][2] == board.cells[1][1] && board.cells[0][2] == board.cells[2][0]) {
