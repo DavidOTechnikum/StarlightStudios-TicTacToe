@@ -1,5 +1,9 @@
+package tictactoe;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import tictactoe.Board;
+import tictactoe.TicTacToe;
 
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;

@@ -37,6 +37,6 @@ jobs:
         # Artifact name
         name: TicTacToe
         # A file, directory or wildcard pattern that describes what to upload
-        path: TicTacToe/target/StarlightStudios-TicTacToe-1.0-SNAPSHOT.jar
+        path: TicTacToe/target/StarlightStudios-tictactoe.TicTacToe-1.0-SNAPSHOT.jar
 
       

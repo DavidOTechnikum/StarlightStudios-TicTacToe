@@ -1,3 +1,7 @@
+package tictactoe;
+
+import java.util.Arrays;
+
 public class Board {
     protected char[][] cells;
     static final int MAX = 3;
@@ -7,12 +11,7 @@ public class Board {
 
     Board() {
         cells = new char[MAX][MAX];
-        for (int i = 0; i < MAX; i++) {
-            for (int j = 0; j < MAX; j++) {
-                cells[i][j] = ' ';
-            }
-        }
-
+        Arrays.stream(cells).forEach(a -> Arrays.fill(a, ' '));
     }
     void print() {
         System.out.println("   0 1 2");
@@ -20,15 +19,9 @@ public class Board {
             System.out.print(i + " |");
             for (int j = 0; j < MAX; j++) {
                 System.out.print(cells[i][j]);
-
-                if (j < MAX) {
-                    System.out.print("|");
-                }
+                System.out.print("|");
             }
             System.out.println();
-//            if (i < 2) {
-//                System.out.println("  -----");
-//            }
         }
     }
     boolean isFull() {
@@ -40,19 +33,11 @@ public class Board {
                 }
             }
         }
-        if (count == 0) {
-            return true;
-        } else {
-            return false;
-        }
+        return (count == 0);
     }
     void clear() {
         cells = new char[MAX][MAX];
-        for (int i = 0; i < MAX; i++) {
-            for (int j = 0; j < MAX; j++) {
-                cells[i][j] = ' ';
-            }
-        }
+        Arrays.stream(cells).forEach(a -> Arrays.fill(a, ' '));
     }
     boolean place(int row, int col, char marker) {
         if (this.isCellEmpty(row, col) == TRUE) {
