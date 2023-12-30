@@ -2,6 +2,16 @@ package tictactoe;
 
 import java.util.Arrays;
 
+/**
+ * Class for Board
+ * TicTacToe board is a 3x3 grid
+ * methods:
+ * print() - prints the board
+ * isFull() - checks if board is full
+ * clear() - clears the board
+ * place() - places a marker on the board
+ * isCellEmpty() - checks if cell is empty
+ */
 public class Board {
     protected char[][] cells;
     static final int MAX = 3;
@@ -9,10 +19,17 @@ public class Board {
     static final int FALSE = 1;
     static final int EXCEPTION = 2;
 
+    /**
+     * Constructor for Board
+     */
     Board() {
         cells = new char[MAX][MAX];
         Arrays.stream(cells).forEach(a -> Arrays.fill(a, ' '));
     }
+
+    /**
+     * Prints the board
+     */
     void print() {
         System.out.println("   0 1 2");
         for (int i = 0; i < MAX; i++) {
@@ -24,6 +41,12 @@ public class Board {
             System.out.println();
         }
     }
+
+    /**
+     * Checks if board is full
+     *
+     * @return true if full
+     */
     boolean isFull() {
         int count = 0;
         for (int i = 0; i < MAX; i++) {
@@ -35,10 +58,23 @@ public class Board {
         }
         return (count == 0);
     }
+
+    /**
+     * Clears the board
+     */
     void clear() {
         cells = new char[MAX][MAX];
         Arrays.stream(cells).forEach(a -> Arrays.fill(a, ' '));
     }
+
+    /**
+     * Places a marker on the board
+     *
+     * @param row    row
+     * @param col    column
+     * @param marker marker
+     * @return true if successful
+     */
     boolean place(int row, int col, char marker) {
         if (this.isCellEmpty(row, col) == TRUE) {
             try {
@@ -53,6 +89,14 @@ public class Board {
         }
         return true;
     }
+
+    /**
+     * Checks if cell is empty
+     *
+     * @param row row
+     * @param col column
+     * @return TRUE if empty
+     */
     int isCellEmpty(int row, int col) {
         try {
             if (cells[row][col] == ' ') {

@@ -2,6 +2,16 @@ package tictactoe;
 
 import java.util.Scanner;
 
+/**
+ * Class for TicTacToe
+ * TicTacToe is a game for two players, X and O, who take turns marking the spaces in a 3×3 grid.
+ * methods:
+ * main() - starts the game
+ * inputCheck() - checks if userinput is valid
+ * hasWinner() - checks if there is a winner
+ * switchCurrentPlayer() - switches the current player
+ * start() - starts the game
+ */
 public class TicTacToe {
     Player player1;
     Player player2;
@@ -12,7 +22,7 @@ public class TicTacToe {
     }
 
     /**
-     *
+     * Starts the game
      */
     void start() {
         Scanner scanner = null;
@@ -48,6 +58,9 @@ public class TicTacToe {
         board = new Board();
     }
 
+    /**
+     * Switches the current player
+     */
     void switchCurrentPlayer() {
         if (currentPlayer == player1) {
             currentPlayer = player2;
@@ -56,6 +69,11 @@ public class TicTacToe {
         }
     }
 
+    /**
+     * Checks if there is a winner
+     *
+     * @return true if there is a winner
+     */
     boolean hasWinner() {
         int count = 0;
         for (int i = 0; i < Board.MAX; i++) {
