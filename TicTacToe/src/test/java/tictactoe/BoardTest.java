@@ -2,7 +2,7 @@ package tictactoe;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import tictactoe.Board;
+
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -122,8 +122,8 @@ public class BoardTest {
     @Test
     void isFull_full_one_marker() {
         char marker = 'x';
-        for (int i = 0; i < board.MAX; i++) {
-            for(int j = 0; j < board.MAX; j++) {
+        for (int i = 0; i < Board.MAX; i++) {
+            for(int j = 0; j < Board.MAX; j++) {
                 board.place(i, j, marker);
             }
         }

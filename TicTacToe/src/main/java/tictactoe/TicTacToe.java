@@ -106,9 +106,11 @@ public class TicTacToe {
             }
             count = 0;
         }
-        if (board.cells[0][0] != ' ' && board.cells[0][0] == board.cells[1][1] && board.cells[0][0] == board.cells[2][2]) {
+        if (board.cells[0][0] != ' ' &&
+            board.cells[0][0] == board.cells[1][1] && board.cells[0][0] == board.cells[2][2]) {
             return true;
-        } else return (board.cells[0][2] != ' ' && board.cells[0][2] == board.cells[1][1] && board.cells[0][2] == board.cells[2][0]);
+        } else return (board.cells[0][2] != ' ' &&
+            board.cells[0][2] == board.cells[1][1] && board.cells[0][2] == board.cells[2][0]);
     }
 
 }

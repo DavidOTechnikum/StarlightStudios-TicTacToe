@@ -20,7 +20,9 @@ public class Main {
         while (playAgain) {
 
             do {
-                System.out.println("It's Player " + ticTacToe.currentPlayer.getMarker() + "'s turn");
+                System.out.println
+                ("It's Player " + ticTacToe.currentPlayer.getMarker() + "'s turn");
+
                 ticTacToe.board.print();
 
                 do {
@@ -40,7 +42,8 @@ public class Main {
             if (ticTacToe.hasWinner()) {
                 ticTacToe.switchCurrentPlayer();
                 ticTacToe.board.print();
-                System.out.println("Congratulations! Player " + ticTacToe.currentPlayer.getMarker() + " has won");
+                System.out.println
+                ("Congratulations! Player " + ticTacToe.currentPlayer.getMarker() + " has won");
             } else if (ticTacToe.board.isFull()) {
                 System.out.println("Oh darn, nobody has won");
             }
