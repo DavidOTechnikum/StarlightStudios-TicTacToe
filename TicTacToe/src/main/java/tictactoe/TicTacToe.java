@@ -1,3 +1,5 @@
+package tictactoe;
+
 import java.util.Scanner;
 
 public class TicTacToe {
@@ -24,7 +26,8 @@ public class TicTacToe {
         System.out.println("\nPlayer 1: Please choose your marker (x or o)");
         boolean scanOk = false;
 
-        while (scanOk == false) {
+        while (!scanOk) {
+            assert scanner != null;
             char c = scanner.next().charAt(0);
             if (c == 'o') {
                 player1 = new Player('o');
@@ -87,11 +90,7 @@ public class TicTacToe {
         }
         if (board.cells[0][0] != ' ' && board.cells[0][0] == board.cells[1][1] && board.cells[0][0] == board.cells[2][2]) {
             return true;
-        } else if (board.cells[0][2] != ' ' && board.cells[0][2] == board.cells[1][1] && board.cells[0][2] == board.cells[2][0]) {
-            return true;
-        } else {
-            return false;
-        }
+        } else return (board.cells[0][2] != ' ' && board.cells[0][2] == board.cells[1][1] && board.cells[0][2] == board.cells[2][0]);
     }
 
 }

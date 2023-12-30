@@ -1,5 +1,9 @@
+package tictactoe;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import tictactoe.Board;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 public class BoardTest {
