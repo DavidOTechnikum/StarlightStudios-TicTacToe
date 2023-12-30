@@ -13,6 +13,7 @@ public class Main {
         int col;
         boolean playAgain = true;
 
+
         while (playAgain) {
 
             do {
