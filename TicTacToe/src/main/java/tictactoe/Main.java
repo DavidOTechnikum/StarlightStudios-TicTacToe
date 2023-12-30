@@ -15,6 +15,7 @@ public class Main {
         do {
             System.out.println("It's Player " + ticTacToe.currentPlayer.getMarker() + "'s turn");
             ticTacToe.board.print();
+            System.out.println();
 
             do {
                 System.out.println("row:");
