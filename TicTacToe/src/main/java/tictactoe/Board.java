@@ -95,7 +95,8 @@ public class Board {
      *
      * @param row row
      * @param col column
-     * @return FALSE if full or EXCEPTION if input is out of bounds (TRUE == 0, FALSE == 1, EXCEPTION == 2)
+     * @return FALSE if full or EXCEPTION if input is out of bounds
+     * (TRUE == 0, FALSE == 1, EXCEPTION == 2)
      */
     int isCellEmpty(int row, int col) {
         try {
