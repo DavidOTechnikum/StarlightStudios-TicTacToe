@@ -25,19 +25,16 @@ public class TicTacToe {
      * Starts the game
      */
     void start() {
-        Scanner scanner = null;
+        Scanner scanner;
         try{
             scanner = new Scanner(System.in);
         } catch (Exception e) {
-            e.printStackTrace();
+            throw new RuntimeException("Scanner failed");
         }
-
-        System.out.println("Welcome to Tic Tac Toe!");
-        System.out.println("\nPlayer 1: Please choose your marker (x or o)");
+        System.out.println("Welcome to Tic Tac Toe!\nPlayer 1: Please choose your marker (x or o)");
         boolean scanOk = false;
 
         while (!scanOk) {
-            assert scanner != null;
             char c = scanner.next().charAt(0);
             if (c == 'o') {
                 player1 = new Player('o');
@@ -53,8 +50,7 @@ public class TicTacToe {
         }
         System.out.println("Thank you. That leaves Player 2 with " + player2.getMarker());
         System.out.println("______\n");
-        //scanner.close();
-
+        scanner.close();
         board = new Board();
     }
 
@@ -70,11 +66,10 @@ public class TicTacToe {
     }
 
     /**
-     * Checks if there is a winner
-     *
-     * @return true if there is a winner
+     * checks if game has been won horizontally
+     * @return true if won
      */
-    boolean hasWinner() {
+    boolean wonHorizontally() {
         int count = 0;
         for (int i = 0; i < Board.MAX; i++) {
             if (board.cells[i][0] == ' ') {
@@ -91,6 +86,15 @@ public class TicTacToe {
             }
             count = 0;
         }
+        return false;
+    }
+
+    /**
+     * checks if game has been won vertically
+     * @return true if won
+     */
+    boolean wonVertically() {
+        int count = 0;
         for (int j = 0; j < Board.MAX; j++) {
             if (board.cells[0][j] == ' ') {
                 continue;
@@ -106,11 +110,26 @@ public class TicTacToe {
             }
             count = 0;
         }
-        if (board.cells[0][0] != ' ' &&
-            board.cells[0][0] == board.cells[1][1] && board.cells[0][0] == board.cells[2][2]) {
-            return true;
-        } else return (board.cells[0][2] != ' ' &&
-            board.cells[0][2] == board.cells[1][1] && board.cells[0][2] == board.cells[2][0]);
+        return false;
     }
 
+    /**
+     * Checks if game has been won diagonally
+     * @return true if won
+     */
+    boolean wonDiagonal(){
+        if (board.cells[0][0] != ' ' &&
+                board.cells[0][0] == board.cells[1][1] && board.cells[0][0] == board.cells[2][2]) {
+            return true;
+        } else return (board.cells[0][2] != ' ' &&
+                board.cells[0][2] == board.cells[1][1] && board.cells[0][2] == board.cells[2][0]);
+    }
+    /**
+     * Checks if there is a winner
+     *
+     * @return true if there is a winner
+     */
+    boolean hasWinner() {
+        return wonDiagonal() || wonHorizontally() || wonVertically();
+    }
 }
