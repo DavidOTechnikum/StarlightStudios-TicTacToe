@@ -8,61 +8,28 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-
         TicTacToe ticTacToe = new TicTacToe();
         ticTacToe.start();
         ticTacToe.currentPlayer = ticTacToe.player1;
-        int row;
-        int col;
         boolean playAgain = true;
 
-
         while (playAgain) {
-
             do {
-                System.out.println
-                ("It's Player " + ticTacToe.currentPlayer.getMarker() + "'s turn");
+                System.out.println("It's Player "
+                        + ticTacToe.currentPlayer.getMarker() + "'s turn");
 
                 ticTacToe.board.print();
-
-                do {
-                    System.out.println("row:");
-                    row = inputCheck();
-
-                    System.out.println("column:");
-                    col = inputCheck();
-                    System.out.println("_____\n");
-
-                } while (!ticTacToe.board.place(row, col, ticTacToe.currentPlayer.getMarker()));
-
+                makeMove(ticTacToe);
                 ticTacToe.switchCurrentPlayer();
-
             } while (!ticTacToe.hasWinner() && !ticTacToe.board.isFull());
 
             if (ticTacToe.hasWinner()) {
-                ticTacToe.switchCurrentPlayer();
-                ticTacToe.board.print();
-                System.out.println
-                ("Congratulations! Player " + ticTacToe.currentPlayer.getMarker() + " has won");
+                printCongratulations(ticTacToe);
             } else if (ticTacToe.board.isFull()) {
                 System.out.println("Oh darn, nobody has won");
             }
             ticTacToe.board.clear();
-
-            System.out.println("\nWould you like to play again? (y - yes, n - no)");
-            while (true) {
-                String s = scanner.nextLine();
-                if (s.equals("y")) {
-                    ticTacToe.switchCurrentPlayer();
-                    break;
-                } else if (s.equals("n")) {
-                    playAgain = false;
-                    System.out.println("Thanks for playing!");
-                    break;
-                } else {
-                    System.out.println("Invalid input, please try again");
-                }
-            }
+            playAgain = playAgain();
         }
         scanner.close();
     }
@@ -91,5 +58,56 @@ public class Main {
             }
         }
         return input;
+    }
+
+    /**
+     * Makes a move
+     *
+     * @param ticTacToe TicTacToe
+     */
+    private static void makeMove(TicTacToe ticTacToe) {
+        int row;
+        int col;
+        do {
+            System.out.println("row:");
+            row = inputCheck();
+
+            System.out.println("column:");
+            col = inputCheck();
+            System.out.println("_____\n");
+        } while (!ticTacToe.board.place(row, col, ticTacToe.currentPlayer.getMarker()));
+    }
+
+    /**
+     * Asks if user wants to play again
+     *
+     * @return true if yes
+     */
+    static boolean playAgain() {
+        Scanner scanner = new Scanner(System.in);
+        String input;
+
+        while (true) {
+            System.out.println("Do you want to play again? (y/n)");
+            input = scanner.nextLine();
+            if (input.equals("y")) {
+                return true;
+            } else if (input.equals("n")) {
+                return false;
+            } else {
+                System.out.println("Invalid input, please try again");
+            }
+        }
+    }
+
+    /**
+     * Prints congratulations message
+     *
+     */
+    static void printCongratulations(TicTacToe ticTacToe) {
+        ticTacToe.switchCurrentPlayer();
+        ticTacToe.board.print();
+        System.out.println("Congratulations! Player "
+                + ticTacToe.currentPlayer.getMarker() + " has won");
     }
 }
