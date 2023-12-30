@@ -1,5 +1,11 @@
 package tictactoe;
 
+/**
+ * Class for Player
+ * Player is a player in TicTacToe
+ * methods:
+ * getMarker() - returns player's marker
+ */
 public class Player {
     char marker;
 
@@ -8,7 +14,7 @@ public class Player {
     }
 
     /**
-     * Getter method for player's marker symbol (char).
+     * Getter method for player's marker symbol x or o (char).
      *
      * @return marker
      */

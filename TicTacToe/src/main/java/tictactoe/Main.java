@@ -2,6 +2,9 @@ package tictactoe;
 
 import java.util.Scanner;
 
+/**
+ * Main class for TicTacToe
+ */
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -61,6 +64,11 @@ public class Main {
         scanner.close();
     }
 
+    /**
+     * Checks if userinput is valid
+     *
+     * @return input
+     */
     static int inputCheck() {
         Scanner scanner = new Scanner(System.in);
         int input;
