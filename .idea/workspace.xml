@@ -5,13 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4d98fc77-a5be-4023-9ae3-18ffe4344744" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.github/workflows/ci_on_feature.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/ci_on_feature.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.github/workflows/ci_on_fix.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/ci_on_fix.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TicTacToe/src/main/java/tictactoe/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/TicTacToe/src/main/java/tictactoe/Board.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TicTacToe/src/main/java/tictactoe/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/TicTacToe/src/main/java/tictactoe/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TicTacToe/src/test/java/tictactoe/BoardTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/TicTacToe/src/test/java/tictactoe/BoardTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TicTacToe/src/test/java/tictactoe/TicTacToeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/TicTacToe/src/test/java/tictactoe/TicTacToeTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TicTacToe/src/main/java/tictactoe/TicTacToe.java" beforeDir="false" afterPath="$PROJECT_DIR$/TicTacToe/src/main/java/tictactoe/TicTacToe.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,5 +63,15 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.util.NoSuchElementException" package="java.util" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
