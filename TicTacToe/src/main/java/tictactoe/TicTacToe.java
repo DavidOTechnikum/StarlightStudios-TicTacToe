@@ -50,7 +50,6 @@ public class TicTacToe {
         }
         System.out.println("Thank you. That leaves Player 2 with " + player2.getMarker());
         System.out.println("______\n");
-        scanner.close();
         board = new Board();
     }
 
